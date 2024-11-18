@@ -55,8 +55,8 @@ def create_app(config=None):
 
     # HSTS
     if app.config.get('HSTS_ENABLED'):
-        from flask_sslify import SSLify
-        _sslify = SSLify(app)  # lgtm [py/unused-local-variable]
+        from flask_talisman import Talisman
+        talisman = Talisman(app, force_https=True)  # lgtm [py/unused-local-variable]
 
     # Load Flask-Session
     app.config['SESSION_TYPE'] = app.config.get('SESSION_TYPE')

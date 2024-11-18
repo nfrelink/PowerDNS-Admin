@@ -5,7 +5,9 @@ import dns.inet
 import dns.name
 from flask import current_app
 from urllib.parse import urljoin
-from distutils.util import strtobool
+#from distutils.util import strtobool
+def strtobool(val):
+    return val.lower() in ("yes", "true", "t", "1")
 from itertools import groupby
 
 from .. import utils

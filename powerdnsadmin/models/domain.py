@@ -4,7 +4,9 @@ import traceback
 from flask import current_app
 from flask_login import current_user
 from urllib.parse import urljoin
-from distutils.util import strtobool
+#from distutils.util import strtobool
+def strtobool(val):
+    return val.lower() in ("yes", "true", "t", "1")
 
 from ..lib import utils
 from .base import db, domain_apikey
